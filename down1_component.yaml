@@ -1,4 +1,4 @@
-name: Download data 
+name: Download Data from URL
 description: Downloads data from the specified URL.
 inputs:
 - {name: Url, type: String}
