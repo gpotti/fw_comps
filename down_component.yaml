@@ -11,18 +11,7 @@ metadata:
     canonical_location: https://raw.githubusercontent.com/gpotti/fw_comps/main/down_component.yaml 
 implementation:
   container:
-    image: byrnedo/alpine-curl@sha256:548379d0a4a0c08b9e55d9d87a592b7d35d9ab3037f4936f5ccd09d0b625a342
-    env:
-      - name: USER
-        valueFrom:
-          secretKeyRef:
-            name: kaggsecret
-            key: KAGGLE_USERNAME
-      - name: PASSWORD
-        valueFrom:
-          secretKeyRef:
-            name: kaggsecret
-            key: KAGGLE_KEY       
+    image: byrnedo/alpine-curl@sha256:548379d0a4a0c08b9e55d9d87a592b7d35d9ab3037f4936f5ccd09d0b625a342     
     command:
     - sh
     - -exc
@@ -32,11 +21,7 @@ implementation:
       curl_options="$2"
       mkdir -p "$(dirname "$output_path")"
       curl --get "$url" --output "$output_path" $curl_options
-      echo "USER is $USER"
-      echo "Password is $PASSWORD"
       echo "download completed"
-      echo "env vars are"
-      env
     - inputValue: Url
     - outputPath: Data
     - inputValue: curl options
