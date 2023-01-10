@@ -22,6 +22,8 @@ implementation:
       mkdir -p "$(dirname "$output_path")"
       curl --get "$url" --output "$output_path" $curl_options
       echo "download completed"
+      echo "kaggle user is $KAGGLE_USER"
+      echo "kaggle key is $KAGGLE_KEY"
     - inputValue: Url
     - outputPath: Data
     - inputValue: curl options
