@@ -32,11 +32,11 @@ implementation:
       curl_options="$2"
       mkdir -p "$(dirname "$output_path")"
       curl --get "$url" --output "$output_path" $curl_options
+      echo "USER is $USER"
+      echo "Password is $PASSWORD"
       echo "download completed"
       echo "env vars are"
       env
-      echo "USER is $USER"
-      echo "Password is $PASSWORD"
     - inputValue: Url
     - outputPath: Data
     - inputValue: curl options
