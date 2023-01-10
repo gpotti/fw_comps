@@ -8,7 +8,7 @@ outputs:
 metadata:
   annotations:
     author: gpotti
-    canonical_location: https://raw.githubusercontent.com/gpotti/fw_comps/main/down_component.yaml 
+    canonical_location: https://raw.githubusercontent.com/gpotti/fw_comps/main/down1_component.yaml
 implementation:
   container:
     image: byrnedo/alpine-curl@sha256:548379d0a4a0c08b9e55d9d87a592b7d35d9ab3037f4936f5ccd09d0b625a342
