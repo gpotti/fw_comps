@@ -36,8 +36,7 @@ implementation:
         valueFrom:
           secretKeyRef:
             name: kaggsecret
-            key: KAGGLE_KEY
-      
+            key: KAGGLE_KEY   
     - inputValue: Url
     - outputPath: Data
     - inputValue: curl options
