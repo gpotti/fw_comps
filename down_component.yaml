@@ -12,6 +12,17 @@ metadata:
 implementation:
   container:
     image: byrnedo/alpine-curl@sha256:548379d0a4a0c08b9e55d9d87a592b7d35d9ab3037f4936f5ccd09d0b625a342
+    env:
+      - name: USER
+        valueFrom:
+          secretKeyRef:
+            name: kaggsecret
+            key: KAGGLE_USERNAME
+      - name: PASSWORD
+        valueFrom:
+          secretKeyRef:
+            name: kaggsecret
+            key: KAGGLE_KEY       
     command:
     - sh
     - -exc
@@ -26,17 +37,6 @@ implementation:
       env
       echo "USER is $USER"
       echo "Password is $PASSWORD"
-    env:
-      - name: USER
-        valueFrom:
-          secretKeyRef:
-            name: kaggsecret
-            key: KAGGLE_USERNAME
-      - name: PASSWORD
-        valueFrom:
-          secretKeyRef:
-            name: kaggsecret
-            key: KAGGLE_KEY   
     - inputValue: Url
     - outputPath: Data
     - inputValue: curl options
