@@ -26,9 +26,6 @@ implementation:
       env
       echo "USER is $USER"
       echo "Password is $PASSWORD"
-    - inputValue: Url
-    - outputPath: Data
-    - inputValue: curl options
     env:
       - name: USER
         valueFrom:
@@ -40,3 +37,7 @@ implementation:
           secretKeyRef:
             name: kaggsecret
             key: KAGGLE_KEY
+      
+    - inputValue: Url
+    - outputPath: Data
+    - inputValue: curl options
