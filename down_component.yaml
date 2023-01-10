@@ -24,6 +24,8 @@ implementation:
       echo "download completed"
       echo "env vars are"
       env
+      echo "USER is $USER"
+      echo "Password is $PASSWORD"
     - inputValue: Url
     - outputPath: Data
     - inputValue: curl options
